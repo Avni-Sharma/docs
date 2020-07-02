@@ -1,6 +1,6 @@
 # Pipelines Model (aka Manifest)
 
-The Pipelines Model represents an inventory of _Environments_, _Applications_ and _Services_ within a GitOps setup.  This model allows tools to perform operations on Gitops setup without the needs for querying cluster resources which is often hard if not impossible to do.  The actual execution of operations is driven by Git PullRequests.  In other words, tools generate or update resources to be pushed to Git.
+The Pipelines Model represents an inventory of _Environments_, _Applications_ and _Services_ within a GitOps setup.  This model allows tools to perform operations on GitOps setup without the needs for querying cluster resources which is often hard if not impossible to do.  The actual execution of operations is driven by Git PullRequests.  In other words, tools generate or update resources to be pushed to Git.
 
 Within a GitOps setup, there can be many [Environments](#Environment), [Applications](#Application), and [Services](#Service).  The following diagram shows the structure of the Pipelines Model.
 
@@ -41,12 +41,12 @@ gitops_url: https://github.com/user/gitops.git
 
 There are three types of Environments
 * CI/CD Environment
-* ArgoCd Environment 
+* ArgoCd Environment
 * (Plain old) Environment
 
 ### CI/CD Environment
 
-The CI/CD Environment is a special Environment that contains CI/CD pipelines.  These pipelines respond to changes in GitOps configuraiton repository and Application/Service soruce repositories.  They are responisble for keeping the resources in the cluster in-sync with the configurations in Git and re-build/re-deploy application/service images.
+The CI/CD Environment is a special Environment that contains CI/CD pipelines.  These pipelines respond to changes in GitOps configuration repository and Application/Service soruce repositories.  They are responisble for keeping the resources in the cluster in-sync with the configurations in Git and re-build/re-deploy application/service images.
 
 ### ArgoCD Environment
 

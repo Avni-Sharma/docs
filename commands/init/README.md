@@ -3,10 +3,10 @@
 Init command creates CI/CD environments for you.  Unlike the [bootstrap](bootstrap.md) command, it does not create your first application and other environments.   It outputs resources yaml files, kustomization files, and Manifest to filesystem.
 
 ```shell
-$ odo pipelines init 
+$ odo pipelines init
   --gitops-repo-url
   --image-repo
-  --dockercfgjson 
+  --dockercfgjson
   [--internal-registry-hostname]
   [--gitops-webhook-secret]
   [--sealed-secrets-ns]  
@@ -22,9 +22,8 @@ $ odo pipelines init
 | --help                  | Help for init|
 | --image-repo            | Where should we configure your builds to push to? E.g. quay.io/user/service or user/service for internal registry|
 | --internal-registry-hostname | Optional.  Internal image registry hostname (default _image-registry.openshift-image-registry.svc:5000_)
-| --output                | Optional.  Output path.  (default is the current working directory|
 | --prefix                | Optional.  This is used to help separate user namespaces. |
-| --sealed-secrets-ns     | Namespace in which the Sealed Secrets operator is installed, automatically generated secrets are encrypted with this operator (default "kube-system")|
+| --output                | Optional.  Output path.  (default is the current working directory)|
 
 The following [directory layout](output) is generated.
 
@@ -67,4 +66,3 @@ The following [directory layout](output) is generated.
 │           └── kustomization.yaml
 └── pipelines.yaml
 ```
-

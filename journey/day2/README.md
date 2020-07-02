@@ -193,7 +193,7 @@ The Event Listener is modified as below to add a `trigger` for the new Service's
 ```
 ## OC Apply Resources
 
-Now, run `oc apply` to apply the gnerated resources to the cluster.
+Now, run `oc apply` to apply the generated resources to the cluster.
 
 ```shell
 $ oc apply -k config/<prefix>-cicd/base

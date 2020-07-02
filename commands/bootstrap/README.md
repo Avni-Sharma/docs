@@ -8,11 +8,11 @@ Bootstrap command creates default environments for your initial application.  It
 * Stage environment
 
 ```shell
-$ odo pipelines bootstrap 
+$ odo pipelines bootstrap
   --gitops-repo-url
-  --service-repo-url 
+  --service-repo-url
   --image-repo
-  --dockercfgjson 
+  --dockercfgjson
   [--internal-registry-hostname]
   [--gitops-webhook-secret]
   [--service-webhook-secret]
@@ -22,19 +22,17 @@ $ odo pipelines bootstrap
 
 ```
 
-| Flag                         | Description |
-| ---------------------------- | ----------- |
-| --dockercfgjson              | This is used to authenticate image pushes to your image-repo. |
-| --gitops-repo-url            | This is where your configuration and pipelines live. |
-| --gitops-webhook-secret      | This is used to validate incoming hooks.  (if not provided, it will be auto-generated)|
-| --help                       | Help for bootstrap|
-| --image-repo                 | Where should we configure your builds to push to? |
-| --internal-registry-hostname | Internal image registry hostname (default "image-registry.openshift-image-registry.svc:5000") |
-| --output                     | Folder path to add Gitops resources (default ".") |
-| --prefix                     | This is used to help separate user namespaces. |
-| --sealed-secrets-ns          | Namespace in which the Sealed Secrets operator is installed, automatically generated secrets are encrypted with this operator (default "kube-system")|
-| --service-repo-url           | This is the source code to your first application. |
-| --service-webhook-secret     | Creates a secret used to validate incoming hooks. (if not provided, it will be auto-generated)|
+| Option                  | Description |
+| ----------------------- | ----------- |
+| --app-repo | The source repository of your initial application.   E.g. https://github.com/user/service.git |
+| --app-webhook-secret | A secret used to validate incoming events from source repository webhook. |
+| --gitops-repo-url | The Git repository where your configuration and manifest live. E.g. https://github.com/user/gitops.git|
+| --gitops-webhook-secret | A secret used to validate incoming events from GitOps webhook. |
+| --image-repo | Where should we configure your builds to push to? E.g. quay.io/user/service or user/service for internal registry|
+| --dockercfgjson | Path to dockercfgjson file.  This is used to authenticate image pushes to your image-repo. |
+| --internal-registry-hostname | Optional. Internal image registry hostname (default _image-registry.openshift-image-registry.svc:5000_)
+| --prefix                | Optional.  This is used to help separate user namespaces. |
+| --output                | Optional.  Output path.  (default is the current working directory)|
 
 The following [directory layout](output) is generated.
 
@@ -120,4 +118,3 @@ The following [directory layout](output) is generated.
 └── pipelines.yaml
 
 ```
-
